@@ -1,0 +1,9 @@
+[Unit]
+Description="Run web-deploy.service Each Hour"
+
+[Timer]
+OnCalendar=*:*:0
+Unit=web-deploy.service
+
+[Install]
+WantedBy=multi-user.target

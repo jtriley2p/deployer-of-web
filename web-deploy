@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# throw if anything fails
+set -e
+
+# if the web-deployer cache doesn't exist, create it then clone the website repo
+if [ ! -d /var/cache/web-deployer ]; then
+    echo "Cache not found, creating cache for backup & repository.."
+
+    # make cache directory
+    mkdir /var/cache/web-deployer
+    cd /var/cache/web-deployer
+
+    # clone the repository and enter it
+    git clone https://github.com/jtriley2p/jtriley-com
+    cd ./jtriley-com
+else
+    # enter the repository
+    cd /var/cache/web-deployer/jtriley-com
+fi
+
+# update the remote, set changed to 1 if the git status contains "Your branch is behind.."
+changed=0
+git remote update && git status -uno | grep -q "Your branch is behind.." && changed=1
+
+# if changes are on the remote, pull, backup, and deploy
+if [ $changed = 1 ]; then
+    echo "Pulling Latest.."
+    git pull
+
+    # move deployment to the backup directory, deleting previous backup if exists
+    echo "Backing up.."
+    if [ -d /var/cache/web-deployer/jtriley-com-backup ]; then
+        rm -rf jtriley-com-backup
+    fi
+    mv /var/www/jtriley.com/public /var/cache/web-deployer/jtriley-com-backup
+
+    # deploy the new version of the website
+    echo "Deploying website.."
+    cp -r /var/cache/web-deployer/jtriley-com/src /var/www/jtriley.com/public
+
+    echo "Deployed latest."
+fi
