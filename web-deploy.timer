@@ -2,7 +2,7 @@
 Description="Run web-deploy.service Each Hour"
 
 [Timer]
-OnCalendar=*:00,10,20,30,40,50:00
+OnCalendar=*-*-* 00:00:00
 Unit=web-deploy.service
 
 [Install]
