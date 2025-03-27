@@ -34,5 +34,5 @@ printf "\nthis command moves the 'web-deploy.service' unit to the systemd servic
 sudo cp web-deploy.service /etc/systemd/system/web-deploy.service
 
 printf "\n\n'sudo cp web-deploy.timer /etc/systemd/system/web-deploy.timer'"
-printf "\nthis command moves the 'web-deploy.timer' unit to the systemd service directory"
+printf "\nthis command moves the 'web-deploy.timer' unit to the systemd service directory\n"
 sudo cp web-deploy.timer /etc/systemd/system/web-deploy.timer
