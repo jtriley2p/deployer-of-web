@@ -16,7 +16,7 @@ Clone and run the initializer.
 > [init](#init) section for more info.
 
 ```bash
-git clone https://github.com/jtriley2p/web-deploy && \
+git clone https://github.com/jtriley2p/deployer-of-web && \
     cd web-deploy && \
     ./init
 ```
