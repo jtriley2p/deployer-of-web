@@ -19,20 +19,20 @@ command -v systemctl > /dev/null
 
 # if `systemctl` isn't found, say that, then exit w code 1
 [ $? -ne 0 ] && \
-    echo "[error]: you'll need systemd for this, but 'systemctl' is not found" && \
+    printf "[error]: you'll need systemd for this, but 'systemctl' is not found\n" && \
     exit 1
 
 # exit if anything fails
 set -e
 
-echo "\n'sudo cp web-deploy /usr/local/bin/web-deploy'"
-echo "this command moves the 'web-deploy' script into the local executables directory"
+printf "\n'sudo cp web-deploy /usr/local/bin/web-deploy'"
+printf "this command moves the 'web-deploy' script into the local executables directory"
 sudo cp web-deploy /usr/local/bin/web-deploy
 
-echo "\n'sudo cp web-deploy.service /etc/systemd/system/web-deploy.service'"
-echo "this command moves the 'web-deploy.service' unit to the systemd service directory"
+printf "\n'sudo cp web-deploy.service /etc/systemd/system/web-deploy.service'"
+printf "this command moves the 'web-deploy.service' unit to the systemd service directory"
 sudo cp web-deploy.service /etc/systemd/system/web-deploy.service
 
-echo "\n'sudo cp web-deploy.timer /etc/systemd/system/web-deploy.timer'"
-echo "this command moves the 'web-deploy.timer' unit to the systemd service directory"
+printf "\n'sudo cp web-deploy.timer /etc/systemd/system/web-deploy.timer'"
+printf "this command moves the 'web-deploy.timer' unit to the systemd service directory"
 sudo cp web-deploy.timer /etc/systemd/system/web-deploy.timer
