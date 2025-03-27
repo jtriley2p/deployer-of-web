@@ -25,14 +25,14 @@ command -v systemctl > /dev/null
 # exit if anything fails
 set -e
 
-printf "\n'sudo cp web-deploy /usr/local/bin/web-deploy'"
-printf "this command moves the 'web-deploy' script into the local executables directory"
+printf "\n\n'sudo cp web-deploy /usr/local/bin/web-deploy'"
+printf "\nthis command moves the 'web-deploy' script into the local executables directory"
 sudo cp web-deploy /usr/local/bin/web-deploy
 
-printf "\n'sudo cp web-deploy.service /etc/systemd/system/web-deploy.service'"
-printf "this command moves the 'web-deploy.service' unit to the systemd service directory"
+printf "\n\n'sudo cp web-deploy.service /etc/systemd/system/web-deploy.service'"
+printf "\nthis command moves the 'web-deploy.service' unit to the systemd service directory"
 sudo cp web-deploy.service /etc/systemd/system/web-deploy.service
 
-printf "\n'sudo cp web-deploy.timer /etc/systemd/system/web-deploy.timer'"
-printf "this command moves the 'web-deploy.timer' unit to the systemd service directory"
+printf "\n\n'sudo cp web-deploy.timer /etc/systemd/system/web-deploy.timer'"
+printf "\nthis command moves the 'web-deploy.timer' unit to the systemd service directory"
 sudo cp web-deploy.timer /etc/systemd/system/web-deploy.timer
