@@ -23,7 +23,7 @@ git clone https://github.com/jtriley2p/web-deploy && \
 
 ## Relevant Files
 
-### [`init`](./init)
+### [init](./init)
 
 Initializer, it sends each file to their appropriate place.
 
@@ -31,7 +31,7 @@ Initializer, it sends each file to their appropriate place.
 - `web-deploy.service` -> `/etc/systemd/system/web-deploy.service`
 - `web-deploy.timer` -> `/etc/systemd/system/web-deploy.timer`
 
-### [`web-deploy`](./web-deploy)
+### [web-deploy](./web-deploy)
 
 Deployer of web.
 
@@ -45,11 +45,11 @@ Relevant paths:
   - `./src/`: html source directory
 - `/var/cache/web-deployer/jtriley-com-backup/`: backup directory
 
-### [`web-deploy.service`](./web-deploy.service)
+### [web-deploy.service](./web-deploy.service)
 
 Systemd service unit. Runs the script as the root user.
 
-### [`web-deploy.timer`](./web-deploy.timer)
+### [web-deploy.timer](./web-deploy.timer)
 
-Systemd timer unit, runs the [`web-deploy.service`](./web-deploy.service)
+Systemd timer unit, runs the [web-deploy.service](./web-deploy.service)
 service unit on a designated timescale.
