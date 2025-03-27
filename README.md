@@ -21,6 +21,24 @@ git clone https://github.com/jtriley2p/deployer-of-web && \
     ./init
 ```
 
+Start the timer.
+
+```bash
+sudo systemctl start web-deploy.timer
+```
+
+Check its status.
+
+```bash
+systemctl status web-deploy.timer
+```
+
+Optional: Check Logs.
+
+```bash
+sudo journalctl -u web-deploy.timer
+```
+
 ## Relevant Files
 
 ### [init](./init)
