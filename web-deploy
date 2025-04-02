@@ -31,7 +31,7 @@ if [ $changed = 1 ]; then
     # move deployment to the backup directory, deleting previous backup if exists
     echo "Backing up.."
     if [ -d /var/cache/web-deployer/jtriley-com-backup ]; then
-        rm -rf jtriley-com-backup
+        rm -rf /var/cache/web-deployer/jtriley-com-backup
     fi
     mv /var/www/jtriley.com/public /var/cache/web-deployer/jtriley-com-backup
 
